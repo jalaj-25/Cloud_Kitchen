@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloud Kitchen | Welcome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/landing.css" />
+  </head>
+  <body class="landing-page">
+    <div class="site-bg"></div>
+
+    <main class="landing-stage" data-screen="hero">
+      <section id="heroView" class="frame hero-frame" aria-label="Landing page">
+        <div class="hero-shell">
+          <header class="hero-topbar">
+            <div class="hero-brand">
+              <img src="/assets/logo-ck.png" alt="Cloud Kitchen logo" />
+              <div class="hero-brand-copy">
+                <strong>Cloud Kitchen</strong>
+                <span>Startup Mode</span>
+              </div>
+            </div>
+
+            <nav class="hero-nav" aria-label="Primary">
+              <a href="/">HOME</a>
+              <a href="#specials">SPECIALS</a>
+              <a href="#about">ABOUT US</a>
+              <a href="#contact">CONTACT US</a>
+            </nav>
+
+            <div class="hero-actions">
+              <button id="openAdminBtn" type="button" class="hero-admin-btn">ADMIN LOGIN</button>
+              <button id="openLoginBtn" type="button" class="hero-login-btn">LOGIN</button>
+            </div>
+          </header>
+
+          <div class="hero-content">
+            <div class="hero-copy">
+              <p class="hero-eyebrow">Welcome to our</p>
+              <h1>Cloud Kitchen</h1>
+              <p class="hero-text">
+                Experience the future of dining with our Cloud Kitchen. Enjoy a diverse menu crafted by expert chefs,
+                delivered straight to your door.
+              </p>
+
+              <div class="hero-categories" aria-label="Menu categories">
+                <span>Meal</span>
+                <span>Snacks</span>
+                <span>Beverages</span>
+                <span>Desserts</span>
+              </div>
+            </div>
+
+            <div class="hero-visual">
+              <img src="/assets/hero-bowl.png" alt="Signature Cloud Kitchen dish" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="authView" class="frame auth-frame is-hidden" aria-label="Login and signup">
+        <div class="auth-shell">
+          <div class="auth-image">
+            <img src="/assets/hero-bg.png" alt="Cloud Kitchen ambience" />
+          </div>
+
+          <div class="auth-panel">
+            <div class="auth-card">
+              <div class="auth-brand">
+                <img src="/assets/logo-ck.png" alt="Cloud Kitchen logo" />
+              </div>
+
+              <div class="auth-tabs" role="tablist" aria-label="Authentication mode">
+                <button id="signupTab" type="button" class="auth-tab is-active" data-auth-mode="signup">SIGN UP</button>
+                <button id="loginTab" type="button" class="auth-tab" data-auth-mode="login">LOGIN</button>
+              </div>
+
+              <form id="signupForm" class="auth-form" novalidate>
+                <input id="registerName" type="text" placeholder="Full Name..." required />
+                <input id="registerEmail" type="email" placeholder="Email Address..." autocomplete="email" required />
+                <input id="registerUsername" type="text" placeholder="Username..." autocomplete="username" required />
+                <input id="registerPassword" type="password" placeholder="Password..." autocomplete="new-password" minlength="8" required />
+                <p class="password-note">Use 8+ characters with upper and lower case letters, a number, and a symbol.</p>
+                <p id="passwordStrength" class="password-strength" aria-live="polite">Password strength: -</p>
+                <button type="submit" class="auth-submit">CREATE ACCOUNT</button>
+                <p class="auth-switch">
+                  Already have an account?
+                  <button id="switchToLoginBtn" type="button">Login now</button>
+                </p>
+              </form>
+
+              <form id="loginForm" class="auth-form is-hidden" novalidate>
+                <input id="consumerUsername" type="text" placeholder="Username..." autocomplete="username" required />
+                <input id="consumerPassword" type="password" placeholder="Password..." autocomplete="current-password" required />
+                <button type="submit" class="auth-submit">LOGIN</button>
+                <p class="auth-switch">
+                  New here?
+                  <button id="switchToSignupBtn" type="button">Create account</button>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <dialog id="adminDialog">
+        <form id="adminLoginForm" class="dialog-card admin-dialog-card">
+          <div class="dialog-head">
+            <div>
+              <p class="kicker">Admin Portal</p>
+              <h3>Manager login</h3>
+            </div>
+            <button type="button" id="closeAdminBtn" class="icon-btn" aria-label="Close admin dialog">X</button>
+          </div>
+          <div class="form-grid">
+            <label>
+              Username
+              <input id="adminUsername" type="text" placeholder="Manager username" required />
+            </label>
+            <label>
+              Password
+              <input id="adminPassword" type="password" placeholder="Manager password" required />
+            </label>
+          </div>
+          <div class="dialog-actions">
+            <button type="button" id="cancelAdminBtn" class="btn subtle">Cancel</button>
+            <button type="submit" class="btn accent">Admin Login</button>
+          </div>
+        </form>
+      </dialog>
+
+      <div id="landingNotice" class="landing-notice" aria-live="polite"></div>
+    </main>
+
+    <script src="/landing.js" defer></script>
+  </body>
+</html>
